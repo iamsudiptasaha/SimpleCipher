@@ -22,6 +22,7 @@ uppercase.
  */
  
 String name=”Paul Scholes”;
+
 boolean check=SimpleCipher.Strings.Validate.isName(userInputName, false, false);
 
 
