@@ -33,14 +33,23 @@ Allows developers to decide their own password restriction parameters. First cre
 CustomPasswordFilter cpf=CustomPasswordFilter.getInstance("ABCdef", 1, null, 0,"%$", 2, 1, 0);
 
 The above piece of code, creates a custom password precision that shall allow a password to have
+
 Parameter 1: Alphabets “ABCdef”.
+
 Parameter 2: Minimum 1 alphabet.
+
 Parameter 3: Ward off numeric digit [0-9] restriction.
+
 Parameter 4: Minimum number of numeric digit character. 0 since we already warded off digit validation.
+
 Parameter 5: Symbols “%$”.
+
 Parameter 6: Minimum 2 symbols.
+
 Parameter 7: Total number of minimum characters in the password.
+
 Parameter 8: Total number of maximum characters in the password, 0 if no restriction.
+
 For further and better explanation refer to javadoc.
 
 Once this is done, we can now apply for any password validation with above defined restrictions,
@@ -54,9 +63,13 @@ This returns only true or false based on userInputPassword match, however develo
 To allow such parametric validations, developers can use function isCustomPasswordParametric(userInputPassword, CustomPasswordFilter), that returns a boolean array of size 5. The index definitions are as follows:
 
 Index 0 - Alphabet validation along with minimum alphabet length check.
+
 Index 1 - Digit validation along with minimum digit length check.
+
 Index 2 - Symbol validation along with minimum symbol length check.
+
 Index 3 - Total minimum length check.
+
 Index 4 - Total maximum length check.
 
 For in depth and better explanation refer to javadoc.
