@@ -6,7 +6,9 @@ that are available over both the Web, Android and Javascript.
 
 Name validation:
 ------------------------------------------------------------------------------
+
 According to javadoc,
+
 /**
  * This function validates if a string is valid a valid name. The
 honorific is allowed if user defined.
