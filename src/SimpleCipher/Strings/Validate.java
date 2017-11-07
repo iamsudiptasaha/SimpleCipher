@@ -161,6 +161,17 @@ public class Validate {
     }
     
     /**
+     * This function validates if a string is valid email id or not.
+     * @param email String that needs to be validated.
+     * @return True if valid email id, false if invalid.
+     */
+    public static boolean isEmail(String email){
+        Pattern pattern;
+        pattern=Pattern.compile("^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$");
+        Matcher matcher=pattern.matcher(email);
+        return matcher.matches();
+    }
+    /**
      * This function validates if a string is valid a valid name. The honorific is allowed if user defined.
      * @param name String that needs to be validated.
      * 
