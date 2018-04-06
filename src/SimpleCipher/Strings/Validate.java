@@ -71,6 +71,26 @@ public class Validate {
        Matcher matcher=pattern.matcher(word);
        return matcher.matches();
     }
+    
+    /**
+     * This function validates a string having one or more words with custom seperator or seperators. The seperators are user defined.
+     * @param word String that needs to be validated.
+     *
+     * @param separator The ending parameter for each word to validate word termination. The parameters
+     * should be placed in sequence without any gaps. For backslash, you need to put '\\\\' because the
+     * string parser will remove two of them when "de-escaping" it for the string, and then the regex needs
+     * two for an escaped regex backslash.
+     * <pre>For example : isCustomLastWord(yourString,"/}\\\\") will check for /, }, \ as word termination parameters.</pre>
+     *
+     * @return True if the String is a valid word, else false.
+     */
+    public static boolean String_isWordWithSeparator(String word,String separator){
+        Pattern pattern=Pattern.compile("^(([A-Z]{0,1}[a-z]+(-[a-z]){0,1}[a-z]*[']{0,1}[a-z]*)+[']{0,1})((["+separator+"]{1})\\s(([A-Z]{0,1}[a-z]+(-[a-z]){0,1}[a-z]*[']{0,1}[a-z]*)+[']{0,1}))*$");
+       Matcher matcher=pattern.matcher(word);
+       return matcher.matches();
+        
+    }
+
    
     /**
      * This function validates if a string is valid a sentence.
